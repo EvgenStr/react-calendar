@@ -1,6 +1,23 @@
 .container
   position: relative
+  margin: 0 auto
+  width: 60%
+  text-align: center
+  span
+    width: 100%
 
+  .prevBtn, .nextBtn
+    position: absolute
+    top: 0
+    bottom: 0
+    font-weight: bold
+    border-radius: 50%
+    transition: transform 0.1s linear
+    &:hover
+      cursor: pointer
+      transform: scale(1.2)
 
-.prevBtn 
-    
+  .prevBtn
+    left: 0
+  .nextBtn
+    right: 0

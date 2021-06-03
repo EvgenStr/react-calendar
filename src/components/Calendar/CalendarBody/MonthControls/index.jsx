@@ -9,8 +9,8 @@ function MonthControls (props) {
   return (
     <div className={style.container}>
       <button className={style.prevBtn} onClick={prevHandler}>{'<'}</button>
-      <header>{currentMonthAndYear}</header>
-      <button onClick={nextHandler}>{'>'}</button>
+      <span>{currentMonthAndYear}</span>
+      <button className={style.nextBtn} onClick={nextHandler}>{'>'}</button>
     </div>
   );
 }
