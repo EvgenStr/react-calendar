@@ -15,15 +15,9 @@ function CalendarBody(props) {
     <Week startDate={weekStartDate} key={weekStartDate.toLocaleDateString()} currentDate={currentDate} />
   ));
 
-  const setNextMonth = () => {
-    console.log('set next Month')
-    setCurrentDate(addMonths(currentDate, 1))
-  }
+  const setNextMonth = () => setCurrentDate(addMonths(currentDate, 1));
+  const setPrevMonth = () => setCurrentDate(subMonths(currentDate, 1));
 
-  const setPrevMonth = () => {
-    console.log('set prev Month')
-    setCurrentDate(subMonths(currentDate, 1))
-  }
   return (
     <div className={style.container}>
       <MonthControls currentDate={currentDate} nextHandler={setNextMonth} prevHandler={setPrevMonth} />

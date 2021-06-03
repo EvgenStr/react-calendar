@@ -6,7 +6,8 @@ import Day from './Day';
 export default function Week({ startDate, currentDate }) {
   const daysArray = new Array(7).fill(null).map((_, index) => {
     const currentDay = addDays(startDate, index);
-    return <Day day={currentDay} currentDate={currentDate}  key={currentDay.toLocaleDateString()} />;
+    return <Day day={currentDay} currentDate={currentDate} key={currentDay.toLocaleDateString()} />;
   });
+  
   return <div className={style.container}>{daysArray}</div>;
 }
