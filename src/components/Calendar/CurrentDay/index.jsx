@@ -2,8 +2,8 @@ import React from 'react';
 import { format } from 'date-fns';
 import style from './CurrentDay.module.sass'
 
-function CurrentDay(props) {
-  const { currentDate } = props;
+function CurrentDay() {
+  const currentDate = new Date();
   const dayName = format(currentDate, 'EEEE');
   const dayNumder = format(currentDate, 'd')
   return (
