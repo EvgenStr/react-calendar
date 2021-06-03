@@ -6,8 +6,8 @@ export default function CalendarHeader(props) {
 
   return (
     <div className={style.container}>
-       {arrOfDayNames.map(dayName => (
-        <div className={style.weekDayName}>{dayName}</div>
+      {arrOfDayNames.map(dayName => (
+        <div className={style.weekDayName} key={dayName}>{dayName}</div>
       ))}
     </div>
   );

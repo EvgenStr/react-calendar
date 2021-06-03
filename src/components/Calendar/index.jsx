@@ -6,10 +6,9 @@ import style from './Calendar.module.sass';
 
 function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [monthDiff, setMonthDiff] = useState(0);
- 
+
   return (
-    <CalendarBody currentDate={currentDate} />
+    <CalendarBody />
   );
 }
 
