@@ -1,7 +1,13 @@
 import React from 'react';
 import { format } from 'date-fns';
+import { differenceInCalendarDays } from 'date-fns';
+import cx from 'classnames';
 import style from './Day.module.sass';
 
-export default function Day ({ day }) {
-  return <div className={style.container}>{format(day, 'dd')}</div>;
+function Day({ day }) {
+  const isCurrentDay = !differenceInCalendarDays(day, new Date());
+
+  return <div className={cx(style.day, { [style.currentDay]: isCurrentDay })}>{format(day, 'dd')}</div>;
 }
+
+export default Day;
