@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './CalendarHeader.module.sass';
 
-export default function CalendarHeader(props) {
-  const arrOfDayNames = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+function CalendarHeader(props) {
+  const arrOfDayNames = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
 
   return (
     <div className={style.weekDayNames}>
@@ -12,3 +12,5 @@ export default function CalendarHeader(props) {
     </div>
   );
 }
+
+export default CalendarHeader;
