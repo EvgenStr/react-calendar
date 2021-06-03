@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { format } from 'date-fns';
+import style from './CurrentDay.module.sass'
 
-function CurrentDay() {
+function CurrentDay(props) {
+  const { currentDate } = props;
   return (
-    <div>
-
+    <div className={style.container}>
+      {format(currentDate,'MM/dd/yyyy')}
     </div>
   )
 }
