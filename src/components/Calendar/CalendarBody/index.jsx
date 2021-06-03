@@ -12,7 +12,7 @@ function CalendarBody(props) {
     end: endOfMonth(currentDate),
   }, { weekStartsOn: 1 });
   const weeks = weeksInMonthArray.map(weekStartDate => (
-    <Week startDate={weekStartDate} key={weekStartDate.toLocaleDateString()} />
+    <Week startDate={weekStartDate} key={weekStartDate.toLocaleDateString()} currentDate={currentDate} />
   ));
 
   const setNextMonth = () => {
