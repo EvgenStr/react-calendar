@@ -10,8 +10,8 @@ function Header() {
         <ul className={style.navList}>
           <NavItem to='/'>Home</NavItem>
           <NavItem to='/calendar'>Calendar</NavItem>
-          <NavItem to='/about'>About</NavItem>
           <NavItem to='/counter'>Counter</NavItem>
+          <NavItem to='/about'>About</NavItem>
         </ul>
       </nav>
     </header>
