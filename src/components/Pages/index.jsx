@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Calendar from './Calendar';
 import PageNotFound from './PageNotFound';
+import Counter from './Counter';
 import style from './Pages.module.sass';
 
 function Pages() {
