@@ -9,7 +9,7 @@ function Header() {
       <nav className={style.navMenu}>
         <ul className={style.navList}>
           <NavItem to='/'>Home</NavItem>
-          <NavItem to='/contacts'>Calendar</NavItem>
+          <NavItem to='/calendar'>Calendar</NavItem>
           <NavItem to='/about'>About</NavItem>
           <NavItem to='/counter'>Counter</NavItem>
         </ul>
