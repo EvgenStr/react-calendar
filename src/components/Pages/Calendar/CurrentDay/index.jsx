@@ -5,7 +5,7 @@ import style from './CurrentDay.module.sass'
 function CurrentDay() {
   const currentDate = new Date();
   const dayName = format(currentDate, 'EEEE');
-  const dayNumder = format(currentDate, 'd')
+  const dayNumder = format(currentDate, 'dd')
   return (
     <div className={style.container}>
       <p className={style.dayName}>{dayName}</p>

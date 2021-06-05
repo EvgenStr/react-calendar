@@ -11,7 +11,7 @@ function Header() {
           <NavItem to='/'>Home</NavItem>
           <NavItem to='/calendar'>Calendar</NavItem>
           <NavItem to='/counter'>Counter</NavItem>
-          <NavItem to='/about'>About</NavItem>
+          <NavItem to='/user-list'>User-List</NavItem>
         </ul>
       </nav>
     </header>

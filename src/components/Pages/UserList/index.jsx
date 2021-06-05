@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import UserCard, { userPropType } from './UserCard';
+import { USERS_DB } from '../../../common/constants';
 import style from './UserList.module.scss';
 
 class UserList extends Component {
   toggleUserSelection = id => {
-    const { users, setUsers } = this.props;
-
-    setUsers(
-      users.map(user => ({
-        ...user,
-        isSelected: user.id === id ? !user.isSelected : user.isSelected,
-      }))
-    );
+    const users = USERS_DB
   };
   mapUser = user => {
     return (
@@ -23,8 +17,8 @@ class UserList extends Component {
       />
     );
   };
-  render () {
-    const { users } = this.props;
+  render() {
+    const users = USERS_DB;
     return (
       <section className={style.container}>
         <h1>USER LIST FROM DB</h1>
