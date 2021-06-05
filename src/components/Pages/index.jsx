@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Header from './Header';
+import Calendar from './Calendar';
 
 function Pages() {
   return (
@@ -10,9 +11,9 @@ function Pages() {
       <Route exact path='/'>
         {/* <Home /> */}
       </Route>
-      <Route path='/contacts'>
+      <Route path='/calendar' component={Calendar} />
         {/* <Contacts /> */}
-      </Route>
+
       {/* <Route path='/about' component={About} />
       <Route path='/counter' component={CounterPage} />
       <Route path='*' component={NotFound} /> */}
