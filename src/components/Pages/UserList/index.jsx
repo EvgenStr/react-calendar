@@ -6,7 +6,6 @@ import style from './UserList.module.scss';
 
 class UserList extends Component {
   toggleUserSelection = id => {
-    const users = USERS_DB
   };
   mapUser = user => {
     return (
