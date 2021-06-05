@@ -2,6 +2,7 @@ import React from 'react';
 import NavItem from './NavItem';
 import style from './Header.module.sass';
 
+
 function Header() {
   return (
     <header className={style.header}>
