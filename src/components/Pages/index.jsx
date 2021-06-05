@@ -14,7 +14,7 @@ function Pages() {
           {/* <Home /> */}
         </Route>
         <Route path='/calendar' component={Calendar} />
-
+        <Route path='/counter' component={Counter} />
         {/* <Route path='/about' component={About} />
       <Route path='/counter' component={CounterPage} />*/}
         <Route path='*' component={PageNotFound} />
