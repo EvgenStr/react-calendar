@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import UserCard, { userPropType } from './UserCard';
-import { USERS_DB } from '../../../common/constants';
+import { USERS_DB } from '../../common/constants';
 import style from './UserList.module.scss';
 
 class UserList extends Component {

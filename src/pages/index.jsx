@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Home from './Home';
-import Calendar from './Calendar';
-import PageNotFound from './PageNotFound';
-import Counter from './Counter';
-import UserList from './UserList';
-import style from './Pages.module.sass';
+import Home from '../components/Home';
+import Calendar from '../components/Calendar';
+import PageNotFound from '../components/PageNotFound';
+import Counter from '../components/Counter';
+import UserList from '../components/UserList';
+import style from './pages.module.sass';
 
 function Pages() {
   return (
