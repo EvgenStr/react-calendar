@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Calendar from './Calendar';
-import style from './Pages.module.sass'
+import PageNotFound from './PageNotFound';
+import style from './Pages.module.sass';
 
 function Pages() {
   return (
@@ -12,11 +13,10 @@ function Pages() {
           {/* <Home /> */}
         </Route>
         <Route path='/calendar' component={Calendar} />
-        {/* <Calendar /> */}
 
         {/* <Route path='/about' component={About} />
-      <Route path='/counter' component={CounterPage} />
-      <Route path='*' component={NotFound} /> */}
+      <Route path='/counter' component={CounterPage} />*/}
+        <Route path='*' component={PageNotFound} />
       </Switch>
     </div>
   )
