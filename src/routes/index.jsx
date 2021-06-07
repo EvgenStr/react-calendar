@@ -8,13 +8,13 @@ import UserList from '../components/UserList';
 
 function Routes() {
   return (
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/calendar' component={Calendar} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/user-list' component={UserList} />
-        <Route path='*' component={PageNotFound} />
-      </Switch>
+    <Switch>
+      <Route exact path='/' component={Home} />
+      <Route path='/calendar' component={Calendar} />
+      <Route path='/counter' component={Counter} />
+      <Route path='/user-list' component={UserList} />
+      <Route path='*' component={PageNotFound} />
+    </Switch>
   )
 }
 export default Routes;
