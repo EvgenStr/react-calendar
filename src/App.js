@@ -1,15 +1,18 @@
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
-import Pages from './pages';
+import Routes from './routes';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import style from './App.css'
 
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Pages />
+      <section className={style.mainContainer}>
+        <Routes />
+      </section>
       <Footer />
     </BrowserRouter>
   );

@@ -5,11 +5,9 @@ import Calendar from '../components/Calendar';
 import PageNotFound from '../components/PageNotFound';
 import Counter from '../components/Counter';
 import UserList from '../components/UserList';
-import style from './pages.module.sass';
 
-function Pages() {
+function Routes() {
   return (
-    <div className={style.mainContainer}>
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/calendar' component={Calendar} />
@@ -17,7 +15,6 @@ function Pages() {
         <Route path='/user-list' component={UserList} />
         <Route path='*' component={PageNotFound} />
       </Switch>
-    </div>
   )
 }
-export default Pages;
+export default Routes;
