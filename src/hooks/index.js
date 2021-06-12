@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export function useData(loadData) {
   const [isFetching, setIsFetching] = useState(false);
@@ -15,6 +15,6 @@ export function useData(loadData) {
       .catch(err => setError(err))
       .finally(() => setIsFetching(false));
   }, []);
-  console.log(data, 'data');
+  console.log(data, 'load data');
   return { data, error, isFetching };
 }
