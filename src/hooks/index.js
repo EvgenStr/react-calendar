@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
 export function useData(loadData) {
   const [isFetching, setIsFetching] = useState(false);
@@ -14,7 +14,8 @@ export function useData(loadData) {
       })
       .catch(err => setError(err))
       .finally(() => setIsFetching(false));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(data, 'load data');
+
   return { data, error, isFetching };
 }
