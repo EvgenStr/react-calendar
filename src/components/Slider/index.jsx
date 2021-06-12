@@ -5,7 +5,6 @@ import SliderControls from './SliderControls';
 import style from './Slider.module.sass';
 
 function Slider() {
-  console.log("render")
   const [currentIndex, setCurrentindex] = useState(0);
 
   const load = () => {
