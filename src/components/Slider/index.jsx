@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { useData } from '../../hooks';
 import Slide from './Slide';
 import SliderControls from './SliderControls';
@@ -7,7 +7,7 @@ import style from './Slider.module.sass';
 function Slider() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const load = () => {
+  const load = async () => {
     return fetch('/images.json').then(res => res.json());
   };
   const { data, error, isFetching } = useData(load);

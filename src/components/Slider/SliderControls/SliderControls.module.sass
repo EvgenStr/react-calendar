@@ -1,12 +1,16 @@
-$button-height: 25px
-
+$button-size: 25px
+$indent: 9px
 
 %button
   position: absolute
-  top: calc( 50% - #{$button-height/2})
+  top: calc( 50% - #{$button-size/2})
+  width: $button-size
+  height: $button-size
   border-radius: 50%
   background-color: green
-  width: $button-height
+  color: #ffffff
+  border: none
+  line-height: $button-size
 
 .container
   position: absolute
@@ -16,8 +20,8 @@ $button-height: 25px
 
 .nextBtn
   @extend %button
-  right: 5px
+  right: $indent
 
 .prevBtn
   @extend %button
-  left: 5px
+  left: $indent
