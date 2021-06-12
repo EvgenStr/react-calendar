@@ -14,7 +14,7 @@ export function useData(loadData) {
       })
       .catch(err => setError(err))
       .finally(() => setIsFetching(false));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  console.log(data, 'data');
   return { data, error, isFetching };
 }

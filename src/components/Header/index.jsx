@@ -11,6 +11,7 @@ function Header() {
           <NavItem to='/calendar'>Calendar</NavItem>
           <NavItem to='/counter'>Counter</NavItem>
           <NavItem to='/user-list'>User-List</NavItem>
+          <NavItem to='/slider'>Slider</NavItem>
         </ul>
       </nav>
     </header>
