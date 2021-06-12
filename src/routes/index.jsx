@@ -5,6 +5,7 @@ import Calendar from '../components/Calendar';
 import PageNotFound from '../components/PageNotFound';
 import Counter from '../components/Counter';
 import UserList from '../components/UserList';
+import Slider from '../components/Slider';
 
 function Routes() {
   return (
@@ -13,6 +14,7 @@ function Routes() {
       <Route path='/calendar' component={Calendar} />
       <Route path='/counter' component={Counter} />
       <Route path='/user-list' component={UserList} />
+      <Route path='/slider' component={Slider} />
       <Route path='*' component={PageNotFound} />
     </Switch>
   )
