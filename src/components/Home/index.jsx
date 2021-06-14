@@ -1,11 +1,10 @@
 import React from 'react';
-import cx from 'classnames';
 import style from './Home.module.sass';
 
 function Home() {
   return (
     <div className={style.container}>
-      <div className={cx(style.words)}>
+      <div className={style.words}>
         <span>W</span>
         <span>E</span>
         <span>L</span>
