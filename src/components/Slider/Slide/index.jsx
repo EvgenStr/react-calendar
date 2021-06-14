@@ -1,23 +1,52 @@
 import React, { useState, useEffect } from 'react';
+import SliderControls from '../SliderControls';
 import cx from 'classnames';
 import style from './Slide.module.sass';
 
-function Slide(props) {
-  const [isLoading, setIsLoading] = useState(true);
+function Slide({ prevSlideHandler, nextSlideHandler, src, prevSrc, nextSrc }) {
+  const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(true)
+    }, 1000)
+  }, [])
   const errorHandler = ({ target }) => {
     target.remove();
     setIsError(true)
   };
-  const loadHandler = () => setIsLoading(false);
-  useEffect(() => { setIsLoading(true) }, [props])
+
+  const handlerSetter = () => {
+    setIsLoading(false);
+    setTimeout(() => {
+      setIsLoading(true)
+    }, 200)
+  }
+
+  const nextHandler = () => {
+    handlerSetter()
+    nextSlideHandler()
+  }
+
+  const prevHandler = () => {
+    handlerSetter()
+    prevSlideHandler()
+  }
+
   return (
     <div className={style.wrapper}>
-      <img className={cx(style.currentSlide, { [style.active]: !isLoading })}
-        onError={errorHandler} onLoad={loadHandler}
-        {...props} alt="space"
+      <img className={cx(style.currentSlide, { [style.active]: isLoading })}
+        onError={errorHandler} src={src} alt="space"
+      />
+      <img className={style.otherSlide}
+        onError={errorHandler} src={prevSrc} alt="space"
+      />
+      <img className={style.otherSlide}
+        onError={errorHandler} src={nextSrc} alt="space"
       />
       <div className={cx(style.error, { [style.errorActive]: isError })}>load error</div>
+      <SliderControls prevHandler={prevHandler} nextHandler={nextHandler} />
     </div>
   )
 }
