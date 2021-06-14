@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SliderControls from '../SliderControls';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import style from './Slide.module.sass';
 
@@ -49,5 +50,12 @@ function Slide({ prevSlideHandler, nextSlideHandler, src, prevSrc, nextSrc }) {
       <SliderControls prevHandler={prevHandler} nextHandler={nextHandler} />
     </div>
   )
+}
+Slide.propTypes = {
+  prevSlideHandler: PropTypes.func.isRequired,
+  nextSlideHandler: PropTypes.func.isRequired,
+  src: PropTypes.string.isRequired,
+  prevSrc: PropTypes.string.isRequired,
+  nextSrc: PropTypes.string.isRequired,
 }
 export default Slide;
