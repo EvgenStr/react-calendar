@@ -7,7 +7,7 @@ import style from './Slider.module.sass';
 function Slider() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const load = async () => {
+  const load = () => {
     return fetch('/images.json').then(res => res.json());
   };
   const { data, error, isFetching } = useData(load);
