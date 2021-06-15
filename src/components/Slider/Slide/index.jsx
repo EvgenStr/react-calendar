@@ -19,10 +19,10 @@ function Slide({ prevSlideHandler, nextSlideHandler, src, prevSrc, nextSrc }) {
 
   const loadHandler = () => {
     wrapper.current.style.opacity = 1
-    handlerSetter()
+    opacitySetter()
   }
 
-  const handlerSetter = () => {
+  const opacitySetter = () => {
     currentImg.current.style.opacity = 1
     nextImg.current.style.opacity = 0
     prevImg.current.style.opacity = 0
