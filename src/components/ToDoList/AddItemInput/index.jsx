@@ -26,15 +26,14 @@ export default function AddItemInput ({ addNewItem }) {
       validateOnBlur={true}
       onSubmit={submitHandler}
     >
-      {formikProps => {
-        console.log(formikProps);
+      {({errors, isValid,dirty}) => {
         return (
           <Form className={style.addForm}>
             <Field
               className={cx(style.addForm, {
                 [style.inputError]:
-                  !formikProps.isValid && formikProps.errors.name,
-                [style.inputValid]: formikProps.isValid && formikProps.dirty,
+                  !isValid && errors.name,
+                [style.inputValid]:isValid && dirty,
               })}
               name='name'
             />
