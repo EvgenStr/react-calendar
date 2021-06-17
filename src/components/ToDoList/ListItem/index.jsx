@@ -9,24 +9,29 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import style from './ListItem.module.sass';
 
-function ListItem({ isDoneHandler, deleteItem, item: { name, id, isDone } }) {
-  // console.log(item)
-  return (<>
+function ListItem ({ isDoneHandler, deleteItem, item: { name, id, isDone } }) {
+  return (
     <li className={style.listItem}>
       <FormControlLabel
-        control={<Checkbox onChange={() => isDoneHandler(id)} icon={<CheckBoxOutlineBlankIcon />}
-          checkedIcon={<DoneIcon />}
-          checked={isDone}
-          name="checkedH" />}
+        control={
+          <Checkbox
+            onChange={() => isDoneHandler(id)}
+            icon={<CheckBoxOutlineBlankIcon />}
+            checkedIcon={<DoneIcon />}
+            checked={isDone}
+            name='checkedH'
+          />
+        }
       />
       <span className={cx(style.text, { [style.done]: isDone })}>{name}</span>
-      <IconButton onClick={() => deleteItem(id)} color="secondary" aria-label="delete">
+      <IconButton
+        onClick={() => deleteItem(id)}
+        color='secondary'
+        aria-label='delete'
+      >
         <DeleteIcon />
       </IconButton>
     </li>
-
-
-  </>
-  )
+  );
 }
 export default ListItem;
