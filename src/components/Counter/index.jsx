@@ -3,7 +3,7 @@ import StepControls from "./StepControls";
 import Button from "./Button";
 import Display from './Display';
 import AutoControls from './AutoControls';
-import style from "./Counter.module.scss";
+import style from "./Counter.module.sass";
 
 function Counter() {
   const [counter, setCounter] = useState(0);

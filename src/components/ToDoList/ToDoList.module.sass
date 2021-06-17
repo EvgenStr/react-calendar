@@ -1,6 +1,20 @@
+@import '../../common/templates.sass'
+
 .container
-  display: flex
-  flex-direction: column
-  justify-content: center
+  @extend %flex-column
+  align-items: center
+  position: relative
   width: 60%
-  margin: 0 auto
+  margin: 35px auto
+  padding: 50px 5px
+  background-color: #e3e9ff
+
+.addToggler
+  position: absolute
+  width: 120px
+  height: 40px
+  bottom: -20px
+  background-color: #af7eeb
+  border: none
+  border-radius: 15px
+  color: #ffffff
