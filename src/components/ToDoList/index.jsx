@@ -4,7 +4,7 @@ import AddItemInput from './AddItemInput'
 
 
 function ToDoList() {
-  const [toDo, setTodo] = useState([{ id: 1, name: 'buy milk', isDone: false }, { id: 2, name: 'test', isDone: false }, { id: 3, name: 'some text', isDone: false }])
+  const [toDo, setTodo] = useState([{ id: 1, name: 'buy milk', isDone: false }, { id: 2, name: 'test', isDone: true }, { id: 3, name: 'some text', isDone: false }])
   const addNewItem = (item) => {
     setTodo([...toDo, item])
   }
