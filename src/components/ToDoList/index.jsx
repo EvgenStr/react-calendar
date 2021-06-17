@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import List from './List';
@@ -6,7 +6,7 @@ import AddItemInput from './AddItemInput';
 import { useToDoList } from 'hooks';
 import style from './ToDoList.module.sass';
 
-function ToDoList() {
+function ToDoList () {
   const [
     toDo,
     isAddActive,
@@ -24,20 +24,15 @@ function ToDoList() {
         isDoneHandler={isDoneHandler}
       ></List>
       {isAddActive && (
-        <button
-          className={style.addToggler}
+        <Button
           onClick={() => setIsAddActive(!isAddActive)}
+          className={style.addToggler}
+          startIcon={<AddIcon />}
         >
-          {'+ New task'}
-        </button>
+          New task
+        </Button>
       )}
-      <Button
-        onClick={() => setIsAddActive(!isAddActive)}
-        className={style.addToggler}
-        startIcon={<AddIcon />}
-      >
-        New task
-      </Button>
+
       {!isAddActive && <AddItemInput addNewItem={addNewItem} />}
     </section>
   );
