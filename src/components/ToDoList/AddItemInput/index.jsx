@@ -2,6 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { uuid } from 'uuidv4';
 import { TO_DO_SCHEMA } from 'utils/validationSchemas';
+import style from './AddItemInput.module.sass'
 
 const initialValues = {
   name: '',
@@ -21,7 +22,7 @@ export default function AddItemInput({ addNewItem }) {
     <Formik initialValues={initialValues} validationSchema={TO_DO_SCHEMA} onSubmit={submitHandler}>
       {formikProps => {
         return (
-          <Form >
+          <Form className={style.addForm} >
             <Field name='name' />
             <ErrorMessage name='name' component='span' />
             <Field type='submit' value='Add' />
