@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { uuid } from 'uuidv4';
+import { v4 as uuidv4 } from 'uuid';
 import cx from 'classnames';
 import { TO_DO_SCHEMA } from 'utils/validationSchemas';
 import style from './AddItemInput.module.sass';
@@ -13,7 +13,7 @@ export default function AddItemInput ({ addNewItem }) {
   const submitHandler = (values, actions) => {
     const newToDo = {
       ...values,
-      id: uuid(),
+      id: uuidv4(),
       isDone: false,
     };
     addNewItem(newToDo);
