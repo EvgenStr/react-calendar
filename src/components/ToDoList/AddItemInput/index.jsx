@@ -26,25 +26,22 @@ export default function AddItemInput ({ addNewItem }) {
       validateOnBlur={true}
       onSubmit={submitHandler}
     >
-      {({errors, isValid,dirty}) => {
+      {({ errors, isValid, dirty }) => {
         return (
           <Form className={style.addForm}>
             <Field
               className={cx(style.addForm, {
-                [style.inputError]:
-                  !isValid && errors.name,
-                [style.inputValid]:isValid && dirty,
+                [style.inputError]: !isValid && errors.name,
+                [style.inputValid]: isValid && dirty,
               })}
               name='name'
             />
             <Field type='submit' value='Add' />
-            {
-              <ErrorMessage
-                className={style.error}
-                name='name'
-                component='span'
-              />
-            }
+            <ErrorMessage
+              className={style.error}
+              name='name'
+              component='span'
+            />
           </Form>
         );
       }}
