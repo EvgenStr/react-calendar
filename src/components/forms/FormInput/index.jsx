@@ -6,22 +6,24 @@ import style from './FormInput.module.sass';
 function FormInput ({
   name,
   children,
-  formikProps: { isValid, errors, dirty },
+  formikProps: { touched, errors, dirty },
   type = 'text',
 }) {
   return (
-    <>
+    <div className={style.container}>
       <Field
         className={cx(style.input, {
-          [style.inputError]: !isValid && errors[name],
-          [style.inputValid]: isValid && dirty,
+          [style.inputError]: touched[name] && errors[name],
+          [style.inputValid]: touched[name] && !errors[name],
         })}
         name={name}
         type={type}
         placeholder={children}
       />
-      <ErrorMessage className={style.error} name={name} component='span' />
-    </>
+      {errors[name] && (
+        <ErrorMessage className={style.error} name={name} component={'span'} />
+      )}
+    </div>
   );
 }
 export default FormInput;
