@@ -2,9 +2,10 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import style from 'SignUpForm.module.sass';
 import cx from 'classnames';
+import {SIGN_UP_SCHEMA} from 'utils/validationSchemas.js'
 
 const initialValues = {
-  FirstName: '',
+  firstName: '',
   lastName: '',
   displayName: '',
   email: '',
@@ -17,7 +18,7 @@ function SignUpForm () {
     <section className={style.container}>
       <Formik
         initialValues={initialValues}
-        validationSchema={TO_DO_SCHEMA}
+        validationSchema={SIGN_UP_SCHEMA}
         validateOnBlur={true}
         onSubmit={submitHandler}
       >
