@@ -9,7 +9,7 @@ import { SIGN_UP_SCHEMA } from 'utils/validationSchemas.js';
 import { INPUT_NAMES } from 'constants.js';
 
 const { firstGroup, secondGroup, thirdGroup } = INPUT_NAMES;
-
+console.log(SIGN_UP_SCHEMA);
 const initialValues = {
   firstName: '',
   lastName: '',
@@ -33,7 +33,7 @@ function SignUpForm () {
         {formikProps => {
           console.log(formikProps);
           return (
-            <Form className={style.addForm}>
+            <Form className={style.signUpForm}>
               <FormGroup inpNames={firstGroup} formikProps={formikProps} />
               <FormGroup inpNames={secondGroup} formikProps={formikProps} />
               <FormGroup inpNames={thirdGroup} formikProps={formikProps} />
