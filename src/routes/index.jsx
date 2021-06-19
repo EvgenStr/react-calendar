@@ -7,6 +7,7 @@ import Counter from '../components/Counter';
 import UserList from '../components/UserList';
 import Slider from '../components/Slider';
 import ToDoList from '../components/ToDoList';
+import SignUpForm from '../components/forms/SignUpForm';
 
 function Routes() {
   return (
@@ -16,6 +17,8 @@ function Routes() {
       <Route path='/counter' component={Counter} />
       <Route path='/user-list' component={UserList} />
       <Route path='/slider' component={Slider} />
+      <Route path='/todo' component={ToDoList} />
+      <Route path='/sign-up' component={SignUpForm} />
       <Route path='/todo' component={ToDoList} />
       <Route path='*' component={PageNotFound} />
     </Switch>

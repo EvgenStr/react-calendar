@@ -1,8 +1,9 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import style from 'SignUpForm.module.sass';
 import cx from 'classnames';
-import {SIGN_UP_SCHEMA} from 'utils/validationSchemas.js'
+import FormInput from '../FormInput';
+import style from './SignUpForm.module.sass';
+import { SIGN_UP_SCHEMA } from 'utils/validationSchemas.js';
 
 const initialValues = {
   firstName: '',
@@ -20,24 +21,14 @@ function SignUpForm () {
         initialValues={initialValues}
         validationSchema={SIGN_UP_SCHEMA}
         validateOnBlur={true}
-        onSubmit={submitHandler}
+        onSubmit={()=>{}}
       >
-        {({ errors, isValid, dirty }) => {
+        {formikProps => {
+          console.log(formikProps)
           return (
             <Form className={style.addForm}>
-              <Field
-                className={cx(style.addForm, {
-                  [style.inputError]: !isValid && errors.name,
-                  [style.inputValid]: isValid && dirty,
-                })}
-                name='name'
-              />
+              <FormInput formikProps={formikProps}/>
               <Field type='submit' value='Add' />
-              <ErrorMessage
-                className={style.error}
-                name='name'
-                component='span'
-              />
             </Form>
           );
         }}
