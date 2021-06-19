@@ -34,11 +34,13 @@ export const PASSWORD_SCHEMA = yup.object({
     .string()
     .oneOf([yup.ref('password'), null], 'Passwords must match'),
 });
+export const USER_IS_SCHEMA = yup.string().required();
 
 export const SIGN_UP_SCHEMA = yup.object().shape({
-  firstName: NAME_SCHEMA ,
+  firstName: NAME_SCHEMA,
   lastName: NAME_SCHEMA,
   displayName: NAME_SCHEMA,
   email: EMAIL_SCHEMA,
   PASSWORD_SCHEMA,
+  userIs: USER_IS_SCHEMA,
 });
