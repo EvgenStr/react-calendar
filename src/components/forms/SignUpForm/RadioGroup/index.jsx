@@ -5,10 +5,9 @@ import { withStyles } from '@material-ui/core/styles';
 import { blue, grey } from '@material-ui/core/colors';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
+import style from './RadioGroup.module.sass';
 
-function RadioGroupInput ({formikProps}) {
+function RadioGroupInput ({ formikProps }) {
   const BleuRadio = withStyles({
     root: {
       color: grey[400],
@@ -17,23 +16,36 @@ function RadioGroupInput ({formikProps}) {
       },
     },
     checked: {},
-  })((props) => <Radio color="default" {...props} />);
+  })(props => <Radio color='default' {...props} />);
   return (
-    <div>
-      {/* <label>
-        <Field type='radio' name='userIs' value='One' />
-        One
-      </label>
-      <label>
-        <Field type='radio' name='userIs' value='Two' />
-        Two
-      </label> */}
-      <RadioGroup aria-label="gender" name='userIs'  onChange={formikProps.handleChange}>
-        <FormControlLabel value="female" control={<BleuRadio />}  />
-        <FormControlLabel value="male" control={<BleuRadio />}  />
-
+    <div className={style.container}>
+      <RadioGroup
+        aria-label='gender'
+        name='userIs'
+        onChange={formikProps.handleChange}
+      >
+        <div className={style.wrapper}>
+          <label>
+            <BleuRadio value='buyer' />
+            Join As a Buyer
+            <span className={style.description}>
+              I am looking for a Name, Logo or Tagline for my business, brand or
+              product.
+            </span>
+          </label>
+        </div>
+        <div className={style.wrapper}>
+          <label>
+            <BleuRadio value='creative' />
+            Join As a Creative or Marketplace Seller
+            <span className={style.description}>
+              I plan to submit name ideas, Logo designs or sell names in Domain
+              Marketplace.
+            </span>
+          </label>
+        </div>
       </RadioGroup>
-
+      <ErrorMessage name='userIs' component={'span'} />
     </div>
   );
 }
