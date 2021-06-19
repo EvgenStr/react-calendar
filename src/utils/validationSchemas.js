@@ -43,4 +43,5 @@ export const SIGN_UP_SCHEMA = yup.object().shape({
   email: EMAIL_SCHEMA,
   PASSWORD_SCHEMA,
   userIs: USER_IS_SCHEMA,
+  terms: yup.boolean().required(),
 });
