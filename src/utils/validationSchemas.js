@@ -14,8 +14,8 @@ export const TO_DO_SCHEMA = yup.object({
 export const NAME_SCHEMA = yup
   .string()
   .trim()
-  .required('Required')
-  .matches(/^[A-Z][a-z]{1,15}$/, 'Name must start with a capital letter');
+  .matches(/^[A-Z][a-z]{1,15}$/, 'Name must start with a capital letter')
+  .required('Required');
 
 export const EMAIL_SCHEMA = yup
   .string()
@@ -35,10 +35,10 @@ export const PASSWORD_SCHEMA = yup.object({
     .oneOf([yup.ref('password'), null], 'Passwords must match'),
 });
 
-export const SIGN_UP_SCHEMA = yup.object({
-  firstName: NAME_SCHEMA,
+export const SIGN_UP_SCHEMA = yup.object().shape({
+  firstName: NAME_SCHEMA ,
   lastName: NAME_SCHEMA,
   displayName: NAME_SCHEMA,
   email: EMAIL_SCHEMA,
-  ...PASSWORD_SCHEMA,
+  PASSWORD_SCHEMA,
 });
