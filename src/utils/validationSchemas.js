@@ -21,7 +21,7 @@ export const EMAIL_SCHEMA = yup
   .string()
   .email()
   .required();
-export const PASSWORD_SCHEMA = yup.object({
+export const PASSWORD_SCHEMA = {
   password: yup
     .string()
     .matches(
@@ -32,16 +32,24 @@ export const PASSWORD_SCHEMA = yup.object({
     .required(),
   passwordConfirmation: yup
     .string()
-    .oneOf([yup.ref('password'), null], 'Passwords must match'),
-});
-export const USER_IS_SCHEMA = yup.string().required();
+    .oneOf([yup.ref('password'), null], 'Passwords must match')
+    .required(),
+};
+export const USER_IS_SCHEMA = yup
+  .string()
+  .required('Please specify whether you are a Creative or a Buyer');
+export const TERMS_SCHEMA = yup
+  .boolean()
+  .oneOf([true], 'Message')
+  .required();
 
 export const SIGN_UP_SCHEMA = yup.object().shape({
   firstName: NAME_SCHEMA,
   lastName: NAME_SCHEMA,
   displayName: NAME_SCHEMA,
   email: EMAIL_SCHEMA,
-  PASSWORD_SCHEMA,
+  password: PASSWORD_SCHEMA.password,
+  passwordConfirmation: PASSWORD_SCHEMA.passwordConfirmation,
   userIs: USER_IS_SCHEMA,
-  terms: yup.boolean().required(),
+  terms: TERMS_SCHEMA,
 });
