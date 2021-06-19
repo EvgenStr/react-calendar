@@ -15,6 +15,7 @@ const initialValues = {
   email: '',
   password: '',
   passwordConfirmation: '',
+  userIs: '',
 };
 
 function SignUpForm () {
@@ -27,13 +28,14 @@ function SignUpForm () {
         onSubmit={() => {}}
       >
         {formikProps => {
-          // console.log(formikProps);
+          console.log(formikProps);
           return (
             <Form className={style.addForm}>
               <FormGroup inpNames={firstGroup} formikProps={formikProps} />
               <FormGroup inpNames={secondGroup} formikProps={formikProps} />
               <FormGroup inpNames={thirdGroup} formikProps={formikProps} />
-              <Field type='submit' value='Add' />
+
+              <Field type='submit' value='Create account' />
             </Form>
           );
         }}

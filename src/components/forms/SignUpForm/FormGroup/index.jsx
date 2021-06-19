@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import FormInput from '../../FormInput';
 import style from './FormGroup.module.sass';
-import { SignUpContext } from 'contexts';
+
 
 export default function FormGroup (props) {
 
