@@ -8,7 +8,6 @@ import { INPUT_NAMES } from 'constants.js';
 import style from './SignUpForm.module.sass';
 
 const { firstGroup, secondGroup, thirdGroup } = INPUT_NAMES;
-console.log(SIGN_UP_SCHEMA);
 const initialValues = {
   firstName: '',
   lastName: '',
@@ -38,12 +37,11 @@ function SignUpForm () {
         onSubmit={submitHandler}
       >
         {formikProps => {
-          console.log(formikProps);
           return (
             <Form className={style.signUpForm}>
-              <FormGroup inpNames={firstGroup} formikProps={formikProps} />
-              <FormGroup inpNames={secondGroup} formikProps={formikProps} />
-              <FormGroup inpNames={thirdGroup} formikProps={formikProps} />
+              <FormGroup inputNames={firstGroup} formikProps={formikProps} />
+              <FormGroup inputNames={secondGroup} formikProps={formikProps} />
+              <FormGroup inputNames={thirdGroup} formikProps={formikProps} />
               <RadioGroupInput formikProps={formikProps} />
               <CheckboxInput formikProps={formikProps} />
               <Field

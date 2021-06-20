@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ErrorMessage } from 'formik';
 import Radio from '@material-ui/core/Radio';
 import { withStyles } from '@material-ui/core/styles';
@@ -48,4 +49,7 @@ function RadioGroupInput ({ formikProps }) {
     </div>
   );
 }
+RadioGroupInput.propTypes = {
+  formikProps: PropTypes.object.isRequired,
+};
 export default RadioGroupInput;

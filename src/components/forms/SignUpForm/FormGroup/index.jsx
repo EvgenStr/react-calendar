@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import FormInput from '../../FormInput';
 import style from './FormGroup.module.sass';
 
-export default function FormGroup (props) {
+function FormGroup (props) {
   const {
-    inpNames: { names, placeholders },
+    inputNames: { names, placeholders },
     formikProps,
   } = props;
   return (
@@ -18,3 +19,11 @@ export default function FormGroup (props) {
     </div>
   );
 }
+FormGroup.propTypes = {
+  inputNames: PropTypes.exact({
+    names: PropTypes.array,
+    placeholders: PropTypes.array,
+  }).isRequired,
+  formikProps: PropTypes.object.isRequired,
+};
+export default FormGroup;

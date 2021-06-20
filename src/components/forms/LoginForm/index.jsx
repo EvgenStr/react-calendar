@@ -24,7 +24,6 @@ function LoginForm () {
         onSubmit={submitHandler}
       >
         {formikProps => {
-          console.log(formikProps);
           return (
             <Form className={style.loginForm}>
               <FormInput name={'email'} formikProps={formikProps}>

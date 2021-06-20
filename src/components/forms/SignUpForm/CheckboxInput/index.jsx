@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Checkbox from '@material-ui/core/Checkbox';
 import { ErrorMessage } from 'formik';
 import style from './CheckboxInput.module.sass';
@@ -18,4 +19,7 @@ function CheckboxInput ({ formikProps: { handleChange } }) {
     </div>
   );
 }
+CheckboxInput.propTypes = {
+  formikProps: PropTypes.object.isRequired,
+};
 export default CheckboxInput;
