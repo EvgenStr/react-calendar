@@ -8,8 +8,9 @@ import UserList from '../components/UserList';
 import Slider from '../components/Slider';
 import ToDoList from '../components/ToDoList';
 import SignUpForm from '../components/forms/SignUpForm';
+import LoginForm from '../components/forms/LoginForm';
 
-function Routes() {
+function Routes () {
   return (
     <Switch>
       <Route exact path='/' component={Home} />
@@ -19,9 +20,9 @@ function Routes() {
       <Route path='/slider' component={Slider} />
       <Route path='/todo' component={ToDoList} />
       <Route path='/sign-up' component={SignUpForm} />
-      <Route path='/todo' component={ToDoList} />
+      <Route path='/login' component={LoginForm} />
       <Route path='*' component={PageNotFound} />
     </Switch>
-  )
+  );
 }
 export default Routes;

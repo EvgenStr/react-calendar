@@ -19,7 +19,7 @@ function Header () {
         <div className={style.rightSide}>
           <ul className={style.navList}>
             <NavItem to='/sign-up'>Sign Up</NavItem>
-            <NavItem to='/login'>Login</NavItem>{' '}
+            <NavItem to='/login'>Login</NavItem>
           </ul>
         </div>
       </nav>
