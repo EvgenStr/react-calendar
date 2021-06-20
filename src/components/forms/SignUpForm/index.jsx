@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import RadioGroupInput from './RadioGroup';
-import Checkbox from '@material-ui/core/Checkbox';
-
+import CheckboxInput from './CheckboxInput';
 import FormGroup from './FormGroup';
 import style from './SignUpForm.module.sass';
 import { SIGN_UP_SCHEMA } from 'utils/validationSchemas.js';
@@ -38,11 +37,7 @@ function SignUpForm () {
               <FormGroup inpNames={secondGroup} formikProps={formikProps} />
               <FormGroup inpNames={thirdGroup} formikProps={formikProps} />
               <RadioGroupInput formikProps={formikProps} />
-              <Checkbox
-                onChange={formikProps.handleChange}
-                name='terms'
-                color='primary'
-              />
+              <CheckboxInput formikProps={formikProps}/>
               <Field type='submit' value='Create account' />
             </Form>
           );
