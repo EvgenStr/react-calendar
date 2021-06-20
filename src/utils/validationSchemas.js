@@ -43,7 +43,7 @@ export const TERMS_SCHEMA = yup
   .oneOf([true], 'Please confirm your agreement with the terms')
   .required('Required');
 
-export const SIGN_UP_SCHEMA = yup.object().shape({
+export const SIGN_UP_SCHEMA = yup.object({
   firstName: NAME_SCHEMA,
   lastName: NAME_SCHEMA,
   displayName: NAME_SCHEMA,
@@ -52,4 +52,9 @@ export const SIGN_UP_SCHEMA = yup.object().shape({
   passwordConfirmation: PASSWORD_SCHEMA.passwordConfirmation,
   userIs: USER_IS_SCHEMA,
   terms: TERMS_SCHEMA,
+});
+
+export const LOGIN_SCHEMA = yup.object({
+  email: EMAIL_SCHEMA,
+  password: PASSWORD_SCHEMA.password,
 });
