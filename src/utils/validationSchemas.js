@@ -40,8 +40,8 @@ export const USER_IS_SCHEMA = yup
   .required('Please specify whether you are a Creative or a Buyer');
 export const TERMS_SCHEMA = yup
   .boolean()
-  .oneOf([true], 'Message')
-  .required();
+  .oneOf([true], 'Please confirm your agreement with the terms')
+  .required('Required');
 
 export const SIGN_UP_SCHEMA = yup.object().shape({
   firstName: NAME_SCHEMA,
