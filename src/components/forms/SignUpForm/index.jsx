@@ -27,6 +27,10 @@ function SignUpForm () {
   };
   return (
     <section className={style.container}>
+      <h2 className={style.signUpHeader}>CREATE AN ACCOUNT</h2>
+      <h4 className={style.signUpHeaderDesc}>
+        We always keep your name and email address private.
+      </h4>
       <Formik
         initialValues={initialValues}
         validationSchema={SIGN_UP_SCHEMA}
