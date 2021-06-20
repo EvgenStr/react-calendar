@@ -1,14 +1,25 @@
-@import 'https://fonts.googleapis.com/css2?family=Work+Sans&display=swap'
+@import  '../../../common/templates.sass'
 
 .container
-  display: flex
-  justify-content: center
+  @extend %flex-row
   margin: 0 auto
   padding-top: 55px
-  background-color: #3ea9f5
+  background-color: $background-color
   width: 100%
   height: 81vh
   font-family: Work Sans ,Halvetica,sans-serif
 
 .signUpForm
   max-width: 595px
+  @extend %flex-column-just-center
+
+.submitBtn
+  background-color: $submit-btn-color
+  transition: all 0.05s ease-in
+  border-radius: 4px
+  height: 64px
+  width: 100%
+  border: 0
+  color: $main-color
+  font-size: 16px
+  font-weight: bolder
