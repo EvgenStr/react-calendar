@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Field, ErrorMessage } from 'formik';
 import cx from 'classnames';
 import style from './FormInput.module.sass';
@@ -7,7 +8,7 @@ function FormInput ({
   name,
   children,
   formikProps: { touched, errors },
-  type = 'text',
+  type,
 }) {
   return (
     <div className={style.container}>
@@ -26,4 +27,13 @@ function FormInput ({
     </div>
   );
 }
+FormInput.defaultProps = {
+  type: 'text',
+};
+FormInput.propTypes = {
+  name: PropTypes.string.isRequired,
+  children: PropTypes.node,
+  formikProps: PropTypes.object.isRequired,
+  type: PropTypes.string,
+};
 export default FormInput;
