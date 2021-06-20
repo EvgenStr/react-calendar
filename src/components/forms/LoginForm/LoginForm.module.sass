@@ -1,0 +1,32 @@
+@import  '../../../common/templates.sass'
+
+.container
+  @extend %flex-column
+  margin: 0 auto
+  padding-top: 55px
+  background-color: $background-color
+  color: $main-color
+  width: 100%
+  height: 81vh
+  font-family: Work Sans ,Halvetica,sans-serif
+
+.loginForm
+  width: 100%
+  max-width: 595px
+  @extend %flex-column-just-center
+  align-items: center
+
+.submitBtn
+  background-color: $submit-btn-color
+  transition: all 0.05s ease-in
+  border-radius: 4px
+  height: 64px
+  width: 96%
+  border: 0
+  font-size: 16px
+  font-weight: bolder
+  color: inherit
+
+.loginHeader
+  font-size: 30px
+  padding: $padding-value
