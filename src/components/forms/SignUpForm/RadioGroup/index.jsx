@@ -10,9 +10,9 @@ import style from './RadioGroup.module.sass';
 function RadioGroupInput ({ formikProps }) {
   const BleuRadio = withStyles({
     root: {
-      color: grey[400],
+      color: grey[200],
       '&$checked': {
-        color: blue[600],
+        color: blue[800],
       },
     },
     checked: {},
