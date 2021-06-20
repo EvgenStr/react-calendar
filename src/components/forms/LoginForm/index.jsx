@@ -24,13 +24,22 @@ function LoginForm () {
         {formikProps => {
           console.log(formikProps);
           return (
-            <Form className={style.signUpForm}>
+            <>
+            <h2 className={style.loginHeader}>LOGIN TO YOUR ACCOUNT</h2>
+            <Form className={style.loginForm}>
+                            <FormInput name={'email'} formikProps={formikProps}>
+                Email Address
+              </FormInput>
+              <FormInput name={'password'} formikProps={formikProps}>
+                Password
+              </FormInput>
               <Field
                 className={style.submitBtn}
                 type='submit'
-                value='Create account'
+                value='LOGIN'
               />
             </Form>
+            </>
           );
         }}
       </Formik>
