@@ -17,17 +17,21 @@ const initialValues = {
   password: '',
   passwordConfirmation: '',
   userIs: '',
-  terms: '',
+  terms: false,
 };
 
 function SignUpForm () {
+  const submitHandler = (values, actions) => {
+    alert(JSON.stringify(values, null, 2));
+    actions.resetForm();
+  };
   return (
     <section className={style.container}>
       <Formik
         initialValues={initialValues}
         validationSchema={SIGN_UP_SCHEMA}
         validateOnBlur={true}
-        onSubmit={() => {}}
+        onSubmit={submitHandler}
       >
         {formikProps => {
           console.log(formikProps);
@@ -37,8 +41,12 @@ function SignUpForm () {
               <FormGroup inpNames={secondGroup} formikProps={formikProps} />
               <FormGroup inpNames={thirdGroup} formikProps={formikProps} />
               <RadioGroupInput formikProps={formikProps} />
-              <CheckboxInput formikProps={formikProps}/>
-              <Field type='submit' value='Create account' />
+              <CheckboxInput formikProps={formikProps} />
+              <Field
+                className={style.submitBtn}
+                type='submit'
+                value='Create account'
+              />
             </Form>
           );
         }}

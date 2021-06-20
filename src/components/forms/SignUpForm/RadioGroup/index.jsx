@@ -45,7 +45,7 @@ function RadioGroupInput ({ formikProps }) {
           </label>
         </div>
       </RadioGroup>
-      <ErrorMessage name='userIs' component={'span'} />
+      <ErrorMessage className={style.error} name='userIs' component={'span'} />
     </div>
   );
 }
