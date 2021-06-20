@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import FormInput from '../FormInput';
 import style from './LoginForm.module.sass';
 import { LOGIN_SCHEMA } from 'utils/validationSchemas.js';
@@ -10,8 +10,9 @@ const initialValues = {
 };
 
 function LoginForm () {
-  const submitHandler = values => {
-    console.log(values);
+  const submitHandler = (values, actions) => {
+    alert(JSON.stringify(values, null, 2));
+    actions.resetForm();
   };
   return (
     <section className={style.container}>

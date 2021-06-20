@@ -1,10 +1,9 @@
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { ErrorMessage } from 'formik';
 import Radio from '@material-ui/core/Radio';
 import { withStyles } from '@material-ui/core/styles';
 import { blue, grey } from '@material-ui/core/colors';
 import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import style from './RadioGroup.module.sass';
 
 function RadioGroupInput ({ formikProps }) {

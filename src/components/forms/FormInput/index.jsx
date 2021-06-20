@@ -1,12 +1,12 @@
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Field, ErrorMessage } from 'formik';
 import cx from 'classnames';
 import style from './FormInput.module.sass';
 
 function FormInput ({
   name,
   children,
-  formikProps: { touched, errors, dirty },
+  formikProps: { touched, errors },
   type = 'text',
 }) {
   return (
