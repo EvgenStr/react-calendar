@@ -1,7 +1,7 @@
 import React from 'react';
-import style from './CheckboxInput.module.sass';
 import Checkbox from '@material-ui/core/Checkbox';
 import { ErrorMessage } from 'formik';
+import style from './CheckboxInput.module.sass';
 
 function CheckboxInput ({ formikProps: { handleChange } }) {
   return (

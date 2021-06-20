@@ -1,8 +1,8 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import FormInput from '../FormInput';
-import style from './LoginForm.module.sass';
 import { LOGIN_SCHEMA } from 'utils/validationSchemas.js';
+import style from './LoginForm.module.sass';
 
 const initialValues = {
   email: '',

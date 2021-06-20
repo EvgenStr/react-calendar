@@ -3,9 +3,9 @@ import { Formik, Form, Field } from 'formik';
 import RadioGroupInput from './RadioGroup';
 import CheckboxInput from './CheckboxInput';
 import FormGroup from './FormGroup';
-import style from './SignUpForm.module.sass';
 import { SIGN_UP_SCHEMA } from 'utils/validationSchemas.js';
 import { INPUT_NAMES } from 'constants.js';
+import style from './SignUpForm.module.sass';
 
 const { firstGroup, secondGroup, thirdGroup } = INPUT_NAMES;
 console.log(SIGN_UP_SCHEMA);
