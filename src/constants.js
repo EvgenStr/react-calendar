@@ -1,14 +1,14 @@
 export const INPUT_NAMES = {
-  firstGroup: {
-    names: ['firstName', 'lastName'],
-    placeholders: ['First Name', 'Last Name'],
-  },
-  secondGroup: {
-    names: ['displayName', 'email'],
-    placeholders: ['Display Name', 'Email Address'],
-  },
-  thirdGroup: {
-    names: ['password', 'passwordConfirmation'],
-    placeholders: ['Password', 'Password Confirmation'],
-  },
+  firstGroup: [
+    { name: 'firstName', placeholder: 'First Name' },
+    { name: 'lastName', placeholder: 'Last Name' },
+  ],
+  secondGroup: [
+    { name: 'displayName', placeholder: 'Display Name' },
+    { name: 'email', placeholder: 'Email Address' },
+  ],
+  thirdGroup: [
+    { name: 'password', placeholder: 'Password' },
+    { name: 'passwordConfirmation', placeholder: 'Password Confirmation' },
+  ],
 };
