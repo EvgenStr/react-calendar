@@ -4,26 +4,16 @@ import FormInput from '../../FormInput';
 import style from './FormGroup.module.sass';
 
 function FormGroup (props) {
-  const {
-    inputNames: { names, placeholders },
-    formikProps,
-  } = props;
-  return (
-    <div className={style.group}>
-      <FormInput formikProps={formikProps} name={names[0]}>
-        {placeholders[0]}
-      </FormInput>
-      <FormInput formikProps={formikProps} name={names[1]}>
-        {placeholders[1]}
-      </FormInput>
-    </div>
-  );
+  const { inputNames, formikProps } = props;
+  const inputsArray = inputNames.map(({ name, placeholder }) => (
+    <FormInput formikProps={formikProps} name={name}>
+      {placeholder}
+    </FormInput>
+  ));
+  return <div className={style.group}>{inputsArray}</div>;
 }
 FormGroup.propTypes = {
-  inputNames: PropTypes.exact({
-    names: PropTypes.array,
-    placeholders: PropTypes.array,
-  }).isRequired,
+  inputNames: PropTypes.array.isRequired,
   formikProps: PropTypes.object.isRequired,
 };
 export default FormGroup;
